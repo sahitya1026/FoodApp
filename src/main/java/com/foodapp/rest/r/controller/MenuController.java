@@ -31,15 +31,14 @@ public class MenuController {
 	}
 	
 	//Try to use ResponseEntity
-//	@GetMapping("/allmenu")
-//	public ResponseEntity<Object> getAllMenu() {
-//		List<Menu> optional = menuService.getAllMenu();
-//		
-//		
-//		return ResponseEntity.status(HttpStatus.OK).body(optional);
-//	}
+	@GetMapping("/allmenu")
+	public ResponseEntity<Object> getAllMenu() {
+		List<Menu> optional = menuService.getAllMenu();
+		
+		
+		return ResponseEntity.status(HttpStatus.OK).body(optional);
+	}
 	
-	//getMenuById api
 	@GetMapping("one/menu/{id}")
 	public ResponseEntity<Object> getMenuById(@PathVariable("id") int id) {
 		Optional<Menu> optional = menuService.getById(id);
