@@ -23,7 +23,8 @@ public class MenuService {
 
 	public List<Menu> getAllMenu() {
 		// TODO Auto-generated method stub
-		return menuRepo.findAll();
+		List<Menu> optional = menuRepo.findAll();
+		return optional;
 	}
 	
 	public Optional<Menu> getById(int id) {
