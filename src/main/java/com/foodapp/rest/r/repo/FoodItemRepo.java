@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.foodapp.rest.r.model.FoodItem;
 
-public interface FoodItemRepo extends JpaRepository<FoodItem, Integer>{
+
+public interface FoodItemRepo extends JpaRepository<FoodItem, Integer> {
 
 }

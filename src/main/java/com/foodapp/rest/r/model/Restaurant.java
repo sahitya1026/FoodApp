@@ -12,19 +12,22 @@ public class Restaurant {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private String RestaurantName;
+	private String restaurantName;
+
 	public int getId() {
-	return id;
-	}
-	public void setId(int id) {
-	this.id = id;
-	}
-	public String getRestaurantName() {
-	return RestaurantName;
-	}
-	public void setRestaurantName(String restaurantName) {
-	RestaurantName = restaurantName;
+		return id;
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getRestaurantName() {
+		return restaurantName;
+	}
+
+	public void setRestaurantName(String restaurantName) {
+		this.restaurantName = restaurantName;
+	}
 
 }

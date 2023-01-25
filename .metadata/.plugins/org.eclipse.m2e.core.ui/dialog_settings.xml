@@ -2,9 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="C:\Users\PASAHITY\Downloads\FoodApp"/>
-			<item value="C:\Users\PASAHITY\Documents\GitHub\FoodApp"/>
-			<item value="C:\sprintnew1"/>
+			<item value="C:\Users\SKADAM10\OneDrive\OneDrive - Capgemini\Documents"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

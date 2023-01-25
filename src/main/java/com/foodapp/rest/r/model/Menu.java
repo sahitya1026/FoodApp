@@ -16,9 +16,14 @@ public class Menu {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
 	private String name;
-	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	@OneToMany
 	private List<Category> category;
 
@@ -36,24 +41,6 @@ public class Menu {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	
-
-//	public Category getCategory() {
-//		return category;
-//	}
-//
-//	public void setCategory(Category category) {
-//		this.category = category;
-//	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 	
 	
