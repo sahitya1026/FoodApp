@@ -55,4 +55,10 @@ public class MenuController {
 		return ResponseEntity.status(HttpStatus.OK).body("Menu deleted by ID");
 	}
 	
+	@GetMapping("/menu/{id}")
+	public Menu getCategory(@PathVariable("id") int id) {
+		Menu menuResponse = menuService.findByCategoryId(id);
+		return menuResponse;
+	}
+	
 }
