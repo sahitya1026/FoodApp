@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.foodapp.rest.r.model.Category;
+import com.foodapp.rest.r.model.Customer;
 import com.foodapp.rest.r.repo.CategoryRepo;
 
 @Service
@@ -31,7 +32,12 @@ public class CategoryService {
 	}
 
 	public void deleteCategoryById(int id) {
-		 categoryRepo.deleteById(id);
-		 }
+		categoryRepo.deleteById(id);
+	}
+
+	public void updateCategoryById(Category category) {
+		categoryRepo.save(category);
+
+	}
 
 }

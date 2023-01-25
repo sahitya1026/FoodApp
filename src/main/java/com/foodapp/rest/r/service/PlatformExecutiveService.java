@@ -1,6 +1,5 @@
 package com.foodapp.rest.r.service;
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -8,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.foodapp.rest.r.model.PlatformExecutive;
-
 import com.foodapp.rest.r.repo.PlatformExecutiveRepo;
+
 @Service
 public class PlatformExecutiveService {
 
@@ -19,13 +18,13 @@ public class PlatformExecutiveService {
 		// TODO Auto-generated method stub
 		platformExecutiveRepo.save(platformExecutive);
 	}
-	
+
 	public List<PlatformExecutive> getAllPlatformExecutive() {
 		// TODO Auto-generated method stub
 		return platformExecutiveRepo.findAll();
 	}
 
-	
+
 	public Optional<PlatformExecutive> getById(int id) {
 		// TODO Auto-generated method stub
 		Optional<PlatformExecutive> optional = platformExecutiveRepo.findById(id);
@@ -36,5 +35,9 @@ public class PlatformExecutiveService {
 		// TODO Auto-generated method stub
 		platformExecutiveRepo.deleteById(id);
 	}
-
+	
+	public void updatePlatformExecutiveById(PlatformExecutive platformExecutive) {
+	
+		platformExecutiveRepo.save(platformExecutive);
+	}
 }

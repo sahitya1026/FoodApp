@@ -7,33 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customer")
+@Table(name="Customer")
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String customerName;
-	
-	private String password;
-
-	private String role;
-	
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
 
 	public int getId() {
 		return id;
