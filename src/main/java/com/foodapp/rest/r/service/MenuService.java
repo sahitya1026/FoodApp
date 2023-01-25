@@ -35,4 +35,9 @@ public class MenuService {
 	public void deleteMenuById(int id) {
 		menuRepo.deleteById(id);
 	}
+	
+	public Menu findByCategoryId(int id) {
+		Menu menu = menuRepo.findByCategoryId(id);
+		return menu;
+	}
 }
