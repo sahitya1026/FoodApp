@@ -30,36 +30,51 @@ public class MenuController {
 		return ResponseEntity.status(HttpStatus.OK).body("Menu added...");
 	}
 
+//	@GetMapping("/allmenu")
+//	public List<Menu> getAllMenu() {
+//		List<Menu> list = menuService.getAllMenu();
+//		return list;
+//	}
+
 	@GetMapping("/allmenu")
-	public List<Menu> getAllMenu() {
-		List<Menu> list = menuService.getAllMenu();
-		return list;
+	public ResponseEntity<Object> getAllMenu() {
+		List<Menu> optional = menuService.getAllMenu();
+
+		return ResponseEntity.status(HttpStatus.OK).body(optional);
 	}
 
 	@GetMapping("/one/menu/{id}")
-	public ResponseEntity<Object> getMneuById(@PathVariable("id") int id) {
-		Optional<Menu> optional = menuService	.getById(id);
+	public ResponseEntity<Object> getMenuById(@PathVariable("id") int id) {
+		Optional<Menu> optional = menuService.getById(id);
 		if (!optional.isPresent()) {
 			ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid Id given");
 		}
 		Menu menu = optional.get();
 		return ResponseEntity.status(HttpStatus.OK).body(menu);
 	}
-	
+
 	@PutMapping("/one/{id}")
-	public ResponseEntity<String> UpdateMenuById(@PathVariable("id") int id,@RequestBody Menu menu){
+	public ResponseEntity<String> UpdateMenuById(@PathVariable("id") int id, @RequestBody Menu menu) {
 		menuService.updateMenuById(menu);
 		return ResponseEntity.status(HttpStatus.OK).body("Menu is updated");
 	}
-	
+
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteMenuById(@PathVariable("id") int id){
+	public ResponseEntity<String> deleteMenuById(@PathVariable("id") int id) {
 		menuService.deleteMenuById(id);
 		return ResponseEntity.status(HttpStatus.OK).body("Menu deleted");
 	}
-//	@GetMapping("/menu/{id}")
-//	public Menu getCategory(@PathVariable("id") int id) {
-//		Menu menuResponse = menuService.findByCategoryId(id);
-//		return menuResponse;
-//	}
+
+	@GetMapping("/menu/{id}")
+	public Menu getCategory(@PathVariable("id") int id) {
+		Menu menuResponse = menuService.findByCategoryId(id);
+		return menuResponse;
+	}
+
+	@GetMapping("/menu/{rid}")
+	public Menu getRestaurant(@PathVariable("rid") int rid) {
+		Menu menuResponse = menuService.findByRestaurantId(rid);
+		return menuResponse;
+}
+
 }

@@ -58,4 +58,9 @@ public class FoodItemController {
 		foodItemService.deleteFoodItemById(id);
 		return ResponseEntity.status(HttpStatus.OK).body("FoodItem deleted");
 	}
+//	@GetMapping("/api/foodItem/{category}")
+//	public List<FoodItem> showFoodItemByCategory(@PathVariable String category) {
+//		List<FoodItem> list = foodItemService.getFoodItemByCategory(category);
+//		return list;
+//}
 }

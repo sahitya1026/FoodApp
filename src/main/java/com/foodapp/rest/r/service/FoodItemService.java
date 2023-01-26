@@ -2,11 +2,13 @@ package com.foodapp.rest.r.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.foodapp.rest.r.model.FoodItem;
+import com.foodapp.rest.r.repo.CategoryRepo;
 import com.foodapp.rest.r.repo.FoodItemRepo;
 
 @Service
@@ -38,5 +40,25 @@ public void updateFoodItemById(FoodItem foodItem) {
 
 	foodItemRepo.save(foodItem);
 }
+
+//public List<FoodItem> getFoodItemByCustomerId(int cid) {
+//	List<FoodItem> list = foodItemRepo.findAll();
+//	
+//	List<FoodItem> filteredList = 
+//			list.stream() 
+//				.filter(e->e.getCategory().getId() == cid)
+//				.collect(Collectors.toList());
+//	
+//	return filteredList;
+//}
+
+//public List<FoodItem> getFoodItemByCategory(String category) {
+//	List<FoodItem> list = foodItemRepo.findAll();
+//	List<FoodItem> filteredList = list.stream()
+//			                           .filter(e->e.getCategory().getCategoryName()=category)
+//			                           .collect(Collectors.toList());
+//	return filteredList;
+//	return CategoryRepo.getFoodItemByCategory(category);
+//}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.foodapp.rest.r.model.Menu;
@@ -35,13 +36,20 @@ public class MenuService {
 		return menuRepo.findAll();
 	}
 
-//	public Menu findByCategoryId(int id) {
-//		Menu menu = menuRepo.findByCategoryId(id);
-//		return menu;
-//	}
-
 	public void updateMenuById(Menu menu) {
 		// TODO Auto-generated method stub
 		menuRepo.save(menu);
 	}
+
+	public Menu findByCategoryId(int id) {
+		// TODO Auto-generated method stub
+		Menu menu = menuRepo.findByCategoryId(id);
+		return menu;
+	}
+
+	public Menu findByRestaurantId(int id) {
+		Menu menu = menuRepo.findByRestaurantId(id);
+		return menu;
+	}
+
 }

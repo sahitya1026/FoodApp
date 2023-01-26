@@ -6,7 +6,9 @@ import com.foodapp.rest.r.model.Menu;
 
 public interface MenuRepo extends JpaRepository<Menu, Integer>{
 
-//	public Menu findByCategoryId(int id);
+	public Menu findByCategoryId(int id);
+
+	public Menu findByRestaurantId(int rid);
 
 
 }
