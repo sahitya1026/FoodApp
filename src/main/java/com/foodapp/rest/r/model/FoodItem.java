@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,8 +13,11 @@ public class FoodItem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String foodItemName;
+	
+	@ManyToOne
+	private Category category;
 
 	public int getId() {
 		return id;
@@ -30,4 +34,15 @@ public class FoodItem {
 	public void setFoodItemName(String foodItemName) {
 		this.foodItemName = foodItemName;
 	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	
+	
 }

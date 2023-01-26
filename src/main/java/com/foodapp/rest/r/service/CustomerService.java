@@ -39,5 +39,10 @@ public class CustomerService {
 		customerRepo.save(customer);
 	}
 
+	public Optional<Customer> getCustomerById(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

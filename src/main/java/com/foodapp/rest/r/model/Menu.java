@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -42,6 +43,18 @@ public class Menu {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@OneToOne
+	private Restaurant restaurant;
+	
+	public Restaurant getRestaurant() {
+	return restaurant;
+	}
+	public void setRestaurant(Restaurant restaurant) {
+	this.restaurant = restaurant;
+	}
+
+
 	
 	
 	

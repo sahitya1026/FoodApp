@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,6 +30,18 @@ public class Restaurant {
 
 	public void setRestaurantName(String restaurantName) {
 		this.restaurantName = restaurantName;
+	}
+
+	@OneToOne
+	@JoinColumn(name = "menu_id")
+	private Menu menu;
+
+	public Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(Menu menu) {
+	this.menu = menu;
 	}
 
 }

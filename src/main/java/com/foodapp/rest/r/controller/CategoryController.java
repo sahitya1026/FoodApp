@@ -39,25 +39,34 @@ public class CategoryController {
 
 	@GetMapping("/one/category/{id}")
 	public ResponseEntity<Object> getCategoryById(@PathVariable("id") int id) {
-		Optional<Category> optional = categoryService	.getById(id);
+		Optional<Category> optional = categoryService.getById(id);
 		if (!optional.isPresent()) {
 			ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid Id given");
 		}
 		Category category = optional.get();
 		return ResponseEntity.status(HttpStatus.OK).body(category);
 	}
-	
+
 	@PutMapping("/one/{id}")
-	public ResponseEntity<String> UpdateCategoryById(@PathVariable("id") int id,@RequestBody Category category){
+	public ResponseEntity<String> UpdateCategoryById(@PathVariable("id") int id, @RequestBody Category category) {
 		categoryService.updateCategoryById(category);
 		return ResponseEntity.status(HttpStatus.OK).body("Category is updated");
 	}
-	
+
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<String> deleteCategoryById(@PathVariable("id") int id){
 		categoryService.deleteCategoryById(id);
 		return ResponseEntity.status(HttpStatus.OK).body("Category deleted");
 	}
 	
-	
+//	@GetMapping("/getone/{id}")
+//	public Category getCategoryById(@PathVariable ("id") int id) {
+//		Optional<Category> optional = categoryService.getCategoryById(id);
+//		if(!optional.isPresent()) 
+//			throw new ResourceNotFoundException("Invalid ID");
+
+//	return optional.get();
+//	}
+
 }
+
